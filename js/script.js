@@ -79,18 +79,18 @@ function game(scelta){
     } else{
         if(dividedByTwo(somma) === true){
             if(scelta === 'pari'){
-                print('alert-success', 'Hai vinto!');
+                print('alert-success', ('Il risultato è:' + ' ' + somma + '. ' + 'Hai vinto!'));
                 console.log('hai vinto');
             } else{
-                print('alert-danger', 'Hai perso!');
+                print('alert-danger', ('Il risultato è:' + ' ' + somma + '. ' + 'Hai perso!'));
                 console.log('hai perso');
             }
         } else{
             if(scelta === 'dispari'){
-                print('alert-success', 'Hai vinto!');
+                print('alert-success', ('Il risultato è:' + ' ' + somma + '. ' + 'Hai vinto!'));
                 console.log('hai vinto');
             } else{
-                print('alert-danger', 'Hai perso!');
+                print('alert-danger', ('Il risultato è:' + ' ' + somma + '. ' + 'Hai perso!'));
                 console.log('hai perso');
             }
         }
