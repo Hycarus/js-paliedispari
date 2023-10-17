@@ -47,39 +47,15 @@ const pari = document.getElementById('pari');
 const dispari = document.getElementById('dispari');
 
 pari.addEventListener('click', function(){
-    const inputEl2 = parseInt(document.getElementById('data2').value);
-    let computerChoice = getRndInteger(1, 5);
-    console.log(computerChoice);
-    console.log(inputEl2);
-    let somma = inputEl2 + computerChoice;
-    console.log(somma);
-    if(inputEl2 > 5){
-        console.log('Quante dita hai?')    
-    } else{
-        if(dividedByTwo(somma) === true){
-            console.log('ha vinto utente');
-        } else{
-            console.log('ha vinto il computer');
-        }
-    }
+    reset('alert-success');
+    reset('alert-danger');
+    game('pari');
 })
 
-dispari.addEventListener('click', function(onclick){
-    const inputEl2 = parseInt(document.getElementById('data2').value);
-    let computerChoice = getRndInteger(1, 5);
-    console.log(computerChoice);
-    console.log(inputEl2);
-    let somma = inputEl2 + computerChoice;
-    console.log(somma);
-    if(inputEl2 > 5){
-        console.log('Quante dita hai?')    
-    } else{
-        if(dividedByTwo(somma) === true){
-            console.log('ha vinto il computer');
-        } else{
-            console.log('ha vinto utente');
-        }
-    }
+dispari.addEventListener('click', function(){
+    reset('alert-success');
+    reset('alert-danger');
+    game('dispari');
 })
 
 function dividedByTwo(num){
@@ -87,5 +63,36 @@ function dividedByTwo(num){
         return true;
     } else{
         return false;
+    }
+}
+
+function game(scelta){
+    const inputEl2 = parseInt(document.getElementById('data2').value);
+    let computerChoice = getRndInteger(1, 5);
+    console.log(computerChoice);
+    console.log(inputEl2);
+    let somma = inputEl2 + computerChoice;
+    console.log(somma);
+    if(inputEl2 > 5){
+        print('alert-danger', 'Quante dita hai?')
+        console.log('Quante dita hai?')    
+    } else{
+        if(dividedByTwo(somma) === true){
+            if(scelta === 'pari'){
+                print('alert-success', 'Hai vinto!');
+                console.log('hai vinto');
+            } else{
+                print('alert-danger', 'Hai perso!');
+                console.log('hai perso');
+            }
+        } else{
+            if(scelta === 'dispari'){
+                print('alert-success', 'Hai vinto!');
+                console.log('hai vinto');
+            } else{
+                print('alert-danger', 'Hai perso!');
+                console.log('hai perso');
+            }
+        }
     }
 }
