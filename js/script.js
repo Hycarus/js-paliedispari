@@ -1,8 +1,5 @@
 const btn = document.querySelector('button');
 
-const resultEl = document.querySelector('.alert');
-
-(function(){
     btn.addEventListener('click', function(){
         const inputEl = document.getElementById('data').value;
         palindrome(inputEl);
@@ -24,13 +21,19 @@ const resultEl = document.querySelector('.alert');
         let word1 = sliceArray.join('');
         let word2 = reverseArray.join('');
         if(word1 === word2){
+            print('alert-success', 'È palindromo');
             console.log('è palindromo');
         } else{
+            print('alert-danger', 'Non è palindromo');
             console.log('non è palindromo');
         }
     }
-})
 
-
+function print(alertColor, msg){
+    const resultEl = document.querySelector('.alert');
+    resultEl.classList.add(alertColor);
+    resultEl.classList.remove('d-none');
+    resultEl.innerText = msg;
+}
 
 
