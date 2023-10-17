@@ -2,6 +2,8 @@ const btn = document.querySelector('button');
 
     btn.addEventListener('click', function(){
         const inputEl = document.getElementById('data').value;
+        reset('alert-success');
+        reset('alert-danger');
         palindrome(inputEl);
     })
     function palindrome(input){
@@ -35,5 +37,9 @@ function print(alertColor, msg){
     resultEl.classList.remove('d-none');
     resultEl.innerText = msg;
 }
-
+function reset(alertColor){
+    const resultEl = document.querySelector('.alert');
+    resultEl.classList.remove(alertColor);
+    resultEl.classList.add('d-none');
+}
 
